@@ -1,22 +1,26 @@
 package com.demo.basicDATASTRUCTURE.Arrays.BinarySerach;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //https://www.codingninjas.com/codestudio/problems/allocate-books_1090540
 public class BookAllocationProblem {
     public static void main(String[] args) {
-        int[] arr = {12, 34, 67, 90};
+        ArrayList<Integer> arr = new ArrayList<>(List.of(10,20,30,40));
         int m=2;
-        int n = arr.length;
+        int n = arr.size();
 
         BookAllocationProblem bp = new BookAllocationProblem();
         int ANS = bp.allocateBook(arr,n,m);
         System.out.println(ANS);
     }
 
-    public int allocateBook(int[] arr, int n , int m){
+    public static int allocateBook(ArrayList<Integer> arr, int n , int m){
 
         int start =0;
         int sum=0;
         for(int i=0;i<n;i++){
-            sum+=arr[i];
+            sum+=arr.get(i);
         }
         int end = sum;
         int mid  = start+(end-start)/2;
@@ -34,20 +38,20 @@ public class BookAllocationProblem {
         return ans;
     }
 
-    boolean isPossibleSolution(int[] arr, int n, int m, int mid){
+    static boolean isPossibleSolution(ArrayList<Integer> arr, int n, int m, int mid){
         int studentCount=1;
         int pageSum=0;
 
         for(int i=0;i<n;i++){
-            if(pageSum+ arr[i] <= mid){
-                pageSum+=arr[i];
+            if(pageSum+ arr.get(i) <= mid){
+                pageSum+=arr.get(i);
             }
             else{
                 studentCount++;
-                if(studentCount > m || arr[i] > mid){
+                if(studentCount > m || arr.get(i) > mid){
                     return false;
                 }
-                pageSum =arr[i];
+                pageSum =arr.get(i);
             }
         }
         return true;
