@@ -9,9 +9,7 @@ public class BookAllocationProblem {
         ArrayList<Integer> arr = new ArrayList<>(List.of(10,20,30,40));
         int m=2;
         int n = arr.size();
-
-        BookAllocationProblem bp = new BookAllocationProblem();
-        int ANS = bp.allocateBook(arr,n,m);
+        int ANS = allocateBook(arr,n,m);
         System.out.println(ANS);
     }
 
