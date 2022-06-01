@@ -28,7 +28,7 @@ public class CheckIfSortedAndRotate{
             count++;
         }
 
-        return count==1;
+        return count<=1; // Suppose array agar {1,1,1} aise aaya tohhhh agar count ==1 kiya hota toh result false aa jata
     }
 
 }
