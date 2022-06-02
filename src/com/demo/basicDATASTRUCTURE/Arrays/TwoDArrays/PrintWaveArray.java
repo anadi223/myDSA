@@ -13,6 +13,7 @@ public class PrintWaveArray {
                 arr[i][j] = s1.nextInt();
             }
         }
+        s1.close();
 
         int n=2,m=2;
         int[] ans = printWave(arr, n, m);

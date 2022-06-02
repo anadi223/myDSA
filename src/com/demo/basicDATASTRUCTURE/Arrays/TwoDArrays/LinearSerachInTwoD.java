@@ -13,6 +13,7 @@ public class LinearSerachInTwoD {
                 arr[i][j] = s1.nextInt();
             }
         }
+        s1.close();
 
         int n=3;
         int m=3;
