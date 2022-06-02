@@ -14,7 +14,6 @@ public class AddArrays {
 
         int[] answer = addArray(arr1, n, arr2, m);
 
-        Arrays.sort(a);
         for(int X: answer){
             System.out.print(X+ " ");
         }
