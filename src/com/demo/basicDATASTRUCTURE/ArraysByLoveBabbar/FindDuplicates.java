@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar;
 //https://leetcode.com/problems/find-all-duplicates-in-an-array/submissions/
 import java.util.ArrayList;
 import java.util.HashMap;

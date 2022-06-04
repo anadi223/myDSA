@@ -1,4 +1,4 @@
-package com.demo.RecursionAndBacktTracking.Recursion;
+package com.demo.RecursionAndBacktTrackingByStriver.Recursion;
 
 public class Print1toNBacktracking_kindoff {
     public static void main(String[] args) {

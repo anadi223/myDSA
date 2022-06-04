@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar;
 
 import java.util.*;
 //https://leetcode.com/problems/unique-number-of-occurrences/submissions/

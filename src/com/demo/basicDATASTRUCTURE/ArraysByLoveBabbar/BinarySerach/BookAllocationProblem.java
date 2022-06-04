@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.BinarySerach;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.BinarySerach;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.demo.RecursionAndBacktTracking.Recursion;
+package com.demo.RecursionAndBacktTrackingByStriver.Recursion;
 
 public class SumofNRecursionParameterizedAndFunctional {
     public static void main(String[] args) {

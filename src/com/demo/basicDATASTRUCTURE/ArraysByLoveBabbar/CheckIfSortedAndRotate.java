@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar;
 
 //https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/submissions/
 public class CheckIfSortedAndRotate{

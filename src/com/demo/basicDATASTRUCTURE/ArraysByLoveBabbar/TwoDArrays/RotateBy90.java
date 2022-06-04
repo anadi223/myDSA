@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.TwoDArrays;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.TwoDArrays;
 //https://leetcode.com/problems/rotate-image/discuss/2103472/Java-100-faster-solution
 public class RotateBy90 {
     public static void main(String[] args) {

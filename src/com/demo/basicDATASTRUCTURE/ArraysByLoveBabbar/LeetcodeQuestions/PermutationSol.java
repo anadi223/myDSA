@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.LeetcodeQuestions;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.LeetcodeQuestions;
 
 
 //https://leetcode.com/problems/build-array-from-permutation/

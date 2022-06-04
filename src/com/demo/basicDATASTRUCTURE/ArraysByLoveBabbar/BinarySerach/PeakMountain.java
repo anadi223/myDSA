@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.BinarySerach;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.BinarySerach;
 
 
 //https://leetcode.com/problems/peak-index-in-a-mountain-array/

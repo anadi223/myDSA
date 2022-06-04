@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.BinarySerach;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.BinarySerach;
 
 //https://www.codingninjas.com/codestudio/problems/painter-s-partition-problem_1089557
 import java.util.ArrayList;

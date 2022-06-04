@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.TwoDArrays;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.TwoDArrays;
 
 import java.util.Scanner;
 

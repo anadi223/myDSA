@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar;
 
 public class SwapAlternates {
     public static void main(String[] args) {

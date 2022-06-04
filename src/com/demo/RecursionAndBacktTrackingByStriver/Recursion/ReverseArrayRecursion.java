@@ -1,4 +1,4 @@
-package com.demo.RecursionAndBacktTracking.Recursion;
+package com.demo.RecursionAndBacktTrackingByStriver.Recursion;
 
 
 import java.util.Arrays;

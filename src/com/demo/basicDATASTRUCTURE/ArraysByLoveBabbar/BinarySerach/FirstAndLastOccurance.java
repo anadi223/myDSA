@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.BinarySerach;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.BinarySerach;
 
 //https://www.codingninjas.com/codestudio/guided-paths/data-structures-algorithms/content/118820/offering/1381880?leftPanelTab=1
 //Notes Q1 BINARY SEARCH

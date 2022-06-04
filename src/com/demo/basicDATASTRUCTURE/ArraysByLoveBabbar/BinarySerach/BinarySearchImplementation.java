@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.BinarySerach;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.BinarySerach;
 
 public class BinarySearchImplementation {
     public static void main(String[] args) {

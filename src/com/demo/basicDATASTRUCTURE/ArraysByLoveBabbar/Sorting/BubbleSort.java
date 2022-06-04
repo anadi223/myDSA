@@ -1,4 +1,4 @@
-package com.demo.basicDATASTRUCTURE.Arrays.Sorting;
+package com.demo.basicDATASTRUCTURE.ArraysByLoveBabbar.Sorting;
 
 public class BubbleSort {
     public static void main(String[] args) {

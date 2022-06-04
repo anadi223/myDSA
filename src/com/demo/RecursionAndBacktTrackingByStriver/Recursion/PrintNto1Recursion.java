@@ -1,4 +1,4 @@
-package com.demo.RecursionAndBacktTracking.Recursion;
+package com.demo.RecursionAndBacktTrackingByStriver.Recursion;
 
 public class PrintNto1Recursion {
     public static void main(String[] args) {

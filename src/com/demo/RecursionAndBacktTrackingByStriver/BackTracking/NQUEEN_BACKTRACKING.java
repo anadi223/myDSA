@@ -1,4 +1,4 @@
-package com.demo.RecursionAndBacktTracking.BackTracking;
+package com.demo.RecursionAndBacktTrackingByStriver.BackTracking;
 
 public class NQUEEN_BACKTRACKING {
     public static void main(String[] args) {
