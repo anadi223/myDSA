@@ -1,18 +1,21 @@
 package com.demo.basicDATASTRUCTURE.LinkedList;
 
 public class LinkedListDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         
         Node head = new Node(10);
 
-        System.out.println(head.data);
+
+
 
 
 
         head = insertAtHead(head, 444444);
         head = insertAtHead(head, 5555);
 
-        printList(head);
+        insertAtHeadMethod2(head,556);
+        insertAtHeadMethod2(head,545454);
+       printList(head);
     }
 
     //printing a Linked List 
@@ -30,6 +33,12 @@ public class LinkedListDemo {
         Node temp = new Node(x);
         temp.next = head;
         return temp;
+    }
+
+    static void insertAtHeadMethod2(Node head, int x){
+        Node temp = new Node(x);
+        temp.next = head;
+        head = temp;
     }
     
 }
