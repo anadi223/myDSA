@@ -5,28 +5,61 @@ public class LinkedListDemo {
         
         Node head = new Node(10);
 
-        Node tail = head;
+         Node tail = head;
 
-         insertAtEnd(tail, 23);
-        insertAtEnd(tail, 43);
+          insertAtEnd(tail, 23);
+         insertAtEnd(tail, 43);
 
-        System.out.println("---------------Printing for tail ------------");
-        printListForTail(tail);
+         System.out.println("---------------Printing for tail ------------");
+         printListForTail(tail);
 
-        head = insertAtHead(head, 444444);
-        head = insertAtHead(head, 5555);
+         head = insertAtHead(head, 444444);
+         head = insertAtHead(head, 5555);
 
-    //    insertAtHeadMethod2(head,556);
-    //    insertAtHeadMethod2(head,545454);
-    System.out.println("---------------Printing for head ------------");
-      printList(head);
+     //    insertAtHeadMethod2(head,556);
+     //    insertAtHeadMethod2(head,545454);
+     System.out.println("---------------Printing for head ------------");
+       printList(head);
+
+       int pos = 1;
+       deleteNode(head, pos);
+       System.out.println("---------------After deleting print in main method ----------------");
+       printList(head);
 
 
-      int position =3;
-      insertAtPosition(head, position, 999);
+    
+    // int x=11;
+    // int position=0;
+    // LinkedListDemo ld = new LinkedListDemo();
+    // ld.insertAtAnyPosition(x, head, position);
+    // System.out.println("--------------Insert at any position-----------------");
+    // printList(head);
 
-      System.out.println("--------Printing for insert at Middle");
-      printList(head);
+    }
+    static void deleteNode(Node head, int position){
+
+        //Delete at first position
+        if(position==1){
+            head = head.next;
+            System.out.println("INSIDE METHOD CALL PRINTING");
+            printList(head);
+            return;
+        }
+
+
+        //Delete at mid or last position
+
+        Node curr = head;
+        Node prev = null;
+        int count=1;
+        while(count<position){
+            prev = curr;
+            curr = curr.next;
+            count++;
+        }
+        prev.next = curr.next;
+        curr.next = null;
+
 
     }
 
@@ -56,6 +89,8 @@ public class LinkedListDemo {
         return temp;
     }
 
+
+    //Not working method
     static void insertAtHeadMethod2(Node head, int x){
         Node temp = new Node(x);
         temp.next = head;
@@ -74,20 +109,31 @@ public class LinkedListDemo {
         return;
     }
 
-    //!Insert at a Given Position
-    static void insertAtPosition(Node head, int position, int x){
-        Node temp = head;
-        int count =1;
-        while(count< position-1){
-            temp = temp.next;
-            count++;
+    //?? Insert data anywhere with position
+     void insertAtAnyPosition(int x,Node head, int position){
+        Node toAdd = new Node(x);
+        if(position==0){
+            toAdd.next = head;
+            head = toAdd;
+            System.out.println("Printing head " + head.data);
+            return;
         }
 
-        //creating a new node to insert
-        Node nodeToInsert = new Node(x);
-        nodeToInsert.next = temp.next;
-        temp.next = nodeToInsert;
+        Node prev = head;
+        for(int i=0;i<position-1;i++){
+            prev = prev.next;
+        }
+        toAdd.next = prev.next;
+        prev.next = toAdd;
+
     }
+
+    
+
+    //?Delete a Node either from start end or middle
+
+
+
 
     
 }
