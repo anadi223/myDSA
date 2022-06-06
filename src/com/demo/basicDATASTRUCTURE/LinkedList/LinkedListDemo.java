@@ -36,32 +36,7 @@ public class LinkedListDemo {
     // printList(head);
 
     }
-    static void deleteNode(Node head, int position){
 
-        //Delete at first position
-        if(position==1){
-            head = head.next;
-            System.out.println("INSIDE METHOD CALL PRINTING");
-            printList(head);
-            return;
-        }
-
-
-        //Delete at mid or last position
-
-        Node curr = head;
-        Node prev = null;
-        int count=1;
-        while(count<position){
-            prev = curr;
-            curr = curr.next;
-            count++;
-        }
-        prev.next = curr.next;
-        curr.next = null;
-
-
-    }
 
     //printing a Linked List 
     static void printList(Node head){
@@ -131,7 +106,34 @@ public class LinkedListDemo {
     
 
     //?Delete a Node either from start end or middle
+    static void deleteNode(Node head, int position){
 
+        //Delete at first position
+        if(position==1){
+            
+            head = head.next;
+            
+            System.out.println("INSIDE METHOD CALL PRINTING");
+            printList(head);
+            return;
+        }
+
+
+        //Delete at mid or last position
+
+        Node curr = head;
+        Node prev = null;
+        int count=1;
+        while(count<position){
+            prev = curr;
+            curr = curr.next;
+            count++;
+        }
+        prev.next = curr.next;
+        curr.next = null;
+
+
+    }
 
 
 
@@ -145,7 +147,7 @@ Node next;
 
 //*constructor */
 public Node(int x){
-    data =x;
-    next = null;
+    this.data =x;
+    this.next = null;
 }
 }
