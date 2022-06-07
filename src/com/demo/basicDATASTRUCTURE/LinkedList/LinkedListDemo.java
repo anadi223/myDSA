@@ -1,9 +1,10 @@
 package com.demo.basicDATASTRUCTURE.LinkedList;
 
 public class LinkedListDemo {
+    public static Node head;
     public static void main(String[] args) { 
         
-        Node head = new Node(10);
+         head = new Node(10);
 
          Node tail = head;
 
@@ -13,18 +14,23 @@ public class LinkedListDemo {
          System.out.println("---------------Printing for tail ------------");
          printListForTail(tail);
 
-         head = insertAtHead(head, 444444);
-         head = insertAtHead(head, 5555);
+         tail=insertAtEnd2(tail, 222);
+        tail= insertAtEnd2(tail, 1111);
+         System.out.println("---------------Printing for tail 2 ------------");
+         printListForTail(tail);
 
-     //    insertAtHeadMethod2(head,556);
-     //    insertAtHeadMethod2(head,545454);
+        //  head = insertAtHead(head, 444444);
+        //  head = insertAtHead(head, 5555);
+
+        insertAtHeadMethod2(head,556);
+        insertAtHeadMethod2(head,545454);
      System.out.println("---------------Printing for head ------------");
        printList(head);
 
-       int pos = 1;
-       deleteNode(head, pos);
-       System.out.println("---------------After deleting print in main method ----------------");
-       printList(head);
+    //    int pos = 1;
+    //    deleteNode(head, pos);
+    //    System.out.println("---------------After deleting print in main method ----------------");
+    //    printList(head);
 
 
     
@@ -82,6 +88,12 @@ public class LinkedListDemo {
         tail.next = temp;
         // tail = tail.next;
         return;
+    }
+
+    static Node insertAtEnd2(Node tail , int x){
+        Node temp = new Node(x);
+        tail.next = temp;
+        return temp;
     }
 
     //?? Insert data anywhere with position
