@@ -16,15 +16,23 @@ public class Question1 {
 
        
 
-        setZeroesBetterApproach(arr);
-        System.out.println("BEtter approch called-----------");
+        // setZeroesBetterApproach(arr);
+        // System.out.println("BEtter approch called-----------");
+        // for (int i = 0; i < arr.length; i++) {
+        //     for (int j = 0; j < arr[0].length; j++) {
+        //         System.out.print(arr[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        optimizedApproach(arr);
+        System.out.println("Optimized approch called-----------");
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {
                 System.out.print(arr[i][j] + " ");
             }
             System.out.println();
         }
-
 
      }
 
@@ -113,6 +121,37 @@ public class Question1 {
 
      }
 
+     //! OPTIMIZED APPROACH O(2*(N*M)) SPACE O(1)
+     static void optimizedApproach(int[][] arr){
+         int col0=1;
+         int row=arr.length;
+         int col =arr[0].length;
+
+         for(int i=0;i<row;i++){
+             if(arr[i][0] ==0) {
+             col0=0;
+            }
+
+             for(int j=1;j<col;j++){
+                 if(arr[i][j] ==0){
+                     arr[i][0] = arr[0][j] =0;
+                 }
+             }
+         }
+
+         for(int i=row-1;i>=0;i--){
+             for(int j=col-1;j>=1;j--){
+                 if(arr[i][0] ==0 || arr[0][j]==0){
+                     arr[i][j] =0;
+                 }
+                 
+             }
+             if(col0==0){
+                arr[i][0] =0;
+            }
+         }
+
+     }
 
 
 
