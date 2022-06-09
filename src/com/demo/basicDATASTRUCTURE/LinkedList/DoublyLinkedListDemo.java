@@ -1,6 +1,5 @@
 package com.demo.basicDATASTRUCTURE.LinkedList;
 
-import javax.swing.SortOrder;
 
 public class DoublyLinkedListDemo {
     public static void main(String[] args) {
@@ -23,6 +22,12 @@ public class DoublyLinkedListDemo {
         System.out.println("-----------------Insert at tail called---------------");
         printList(head);
 
+        head=insertAtAnyPosition(tail,head, 43, 2);
+        System.out.println("-----------------Insert at any pos called---------------");
+        printList(head);
+        System.out.println("-----------------Print Recursive---------------");
+        printRecursive(head);
+
     }
 
 
@@ -34,6 +39,15 @@ public class DoublyLinkedListDemo {
             System.out.println(temp.data);
             temp = temp.next;
         }
+    }
+
+
+    static void printRecursive(Node head){
+        if(head == null){
+            return;
+        }
+        System.out.println(head.data);
+        printRecursive(head.next);
     }
 
     //getting the length of the linked list
@@ -63,8 +77,28 @@ public class DoublyLinkedListDemo {
         return temp;
     }
 
+    static Node insertAtAnyPosition(Node tail,Node head, int data, int pos){
+        Node temp = head;
+        if(pos == 1){
+            return  insertAtHead(head, data);
+        
+        }
 
-    
+        for(int i=1;i<pos-1;i++){
+            temp = temp.next;
+        }
+
+        if(temp.next == null){
+            return insertAtTail(tail, data);
+        }
+
+        Node toAdd = new Node(data);
+        toAdd.next = temp.next;
+        temp.next.prev = toAdd;
+        temp.next = toAdd;
+        toAdd.prev = temp;
+        return head;
+    }
 
 }
 

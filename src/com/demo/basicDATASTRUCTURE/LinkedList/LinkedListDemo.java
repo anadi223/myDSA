@@ -27,10 +27,10 @@ public class LinkedListDemo {
      System.out.println("---------------Printing for head ------------");
        printList(head);
 
-    //    int pos = 1;
-    //    deleteNode(head, pos);
-    //    System.out.println("---------------After deleting print in main method ----------------");
-    //    printList(head);
+       int pos = 1;
+       deleteNode(head, pos);
+       System.out.println("---------------After deleting print in main method ----------------");
+       printList(head);
 
 
     
@@ -90,6 +90,8 @@ public class LinkedListDemo {
         return;
     }
 
+
+    //?Another way to insert AT END::::::
     static Node insertAtEnd2(Node tail , int x){
         Node temp = new Node(x);
         tail.next = temp;
@@ -115,19 +117,25 @@ public class LinkedListDemo {
 
     }
 
-    
+
+    static void deleteHead(Node head){
+        head = head.next;
+
+    }
 
     //?Delete a Node either from start end or middle
     static void deleteNode(Node head, int position){
 
         //Delete at first position
         if(position==1){
-            
-            head = head.next;
-            
+            deleteHead(head);
             System.out.println("INSIDE METHOD CALL PRINTING");
             printList(head);
             return;
+            // head = head.next;
+            
+
+            // return;
         }
 
 
@@ -136,7 +144,7 @@ public class LinkedListDemo {
         Node curr = head;
         Node prev = null;
         int count=1;
-        while(count<position){
+        while(count<position-1){
             prev = curr;
             curr = curr.next;
             count++;
