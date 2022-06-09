@@ -28,6 +28,10 @@ public class DoublyLinkedListDemo {
         System.out.println("-----------------Print Recursive---------------");
         printRecursive(head);
 
+        head=deleteHead(head);
+        System.out.println("-----------------Delete head called---------------");
+        printList(head);
+
     }
 
 
@@ -98,6 +102,30 @@ public class DoublyLinkedListDemo {
         temp.next = toAdd;
         toAdd.prev = temp;
         return head;
+    }
+
+    static Node deleteHead(Node head){
+        if(head == null)return null; //if Linked list is empty
+        if(head.next == null) return null; // if there is only 1 element then return null it will remove the only element in the list 
+        else{
+            head = head.next;
+            head.prev = null;
+            return head;
+        }
+
+    }
+
+    static Node deleteLastNode(Node head){
+        if(head == null) return null;
+        if(head.next == null) return null;
+
+        Node curr = head;
+        while(curr.next != null){
+            curr = curr.next;
+        }
+        curr.prev.next = null; //mtlb ek element peeche wale ka pointer utha ke aage point kr do simple
+        return head;
+
     }
 
 }
