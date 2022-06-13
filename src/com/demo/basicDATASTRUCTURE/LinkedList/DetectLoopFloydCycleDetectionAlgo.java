@@ -61,5 +61,18 @@ public class DetectLoopFloydCycleDetectionAlgo {
         }
         return slow;
     }
+    //https://www.codingninjas.com/codestudio/problems/interview-shuriken-42-detect-and-remove-loop_241049
+    static Node removeLoop(Node head){
+        if(head == null) return null;
+        Node startOfLoop = getStartingNode(head);
+        if(startOfLoop ==null) return head;
+
+        Node temp = startOfLoop;
+        while(temp.next !=startOfLoop){
+            temp = temp.next;
+        }
+        temp.next =null;
+        return head;
+    }
 
 }
