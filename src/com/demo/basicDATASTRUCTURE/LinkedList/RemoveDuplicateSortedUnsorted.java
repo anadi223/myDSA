@@ -12,7 +12,7 @@ public class RemoveDuplicateSortedUnsorted {
         head.next.next.next.next = new Node(1);
         head.next.next.next.next.next = new Node(5);
         printList(head);
-       head= unsortedList(head);
+      // head= unsortedList(head);
        System.out.println("---Unsorted---");
         printList(head);
         // head=sortedList(head);
