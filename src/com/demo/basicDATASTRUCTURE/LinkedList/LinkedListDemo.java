@@ -15,14 +15,14 @@ public class LinkedListDemo {
 
           insertAtEnd(tail, 23);
          insertAtEnd(tail, 43);
-        //  tail.next = head.next;
+       // tail.next = head.next;
          //printList(head);
-         if(floydCycleDetection(head)){
-            System.out.println("Cycle present");
+         Node begginning  = getStartingNode(head);
+         if(begginning ==null){
+            System.out.println("NOPE");
          }else{
-            System.out.println("Not present");
+         System.out.println(begginning.data);
          }
-
         //  System.out.println("---------------Printing for tail ------------");
         //  printListForTail(tail);
 
@@ -54,22 +54,34 @@ public class LinkedListDemo {
 
     }
 
-    static boolean floydCycleDetection(Node head){
-        if(head==null) return false;
+    static Node floydCycleDetection(Node head){
+        if(head==null || head.next == null) return null;
 
         Node slow = head;
         Node fast = head;
         while(slow !=null && fast != null){
-            fast = fast.next;
+            fast = fast.next; // fast do baar aage bdh rha
             if(fast !=null){
                 fast= fast.next;
             }
             slow = slow.next;
-            if(fast == slow){
-                return true;
+            if(fast == slow){ // wo condition jahan pe fast slow ko pakad lega
+                return slow; //IS NODE PE HAI WO INTERSECTIONN
             }
         }
-        return false;
+        return null;
+    }
+
+    static Node getStartingNode(Node head){
+        if(head == null) return null;
+        Node pointOfIntersection = floydCycleDetection(head);
+        if(pointOfIntersection == null) return null;
+        Node slow = head;
+        while(slow !=pointOfIntersection && pointOfIntersection !=null){
+            slow = slow.next;
+            pointOfIntersection = pointOfIntersection.next;
+        }
+        return slow;
     }
 
 
