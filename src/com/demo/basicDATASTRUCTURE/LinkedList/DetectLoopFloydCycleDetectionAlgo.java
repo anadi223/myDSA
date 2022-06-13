@@ -6,7 +6,7 @@ import java.util.HashMap;
 //! Question can be of different type:  1. Find loop, 2. Remove Loop , 3. Find the head from where loop starts 
 public class DetectLoopFloydCycleDetectionAlgo {
     public static void main(String[] args) {
-        
+        //*Tried the code in singly linked list file --> LinkedListDemo.java
     }
 
     //Approach 1: Using map O(n) TC AND SC 
