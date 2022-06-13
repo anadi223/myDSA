@@ -1,5 +1,7 @@
 package com.demo.basicDATASTRUCTURE.LinkedList;
 
+import java.util.HashMap;
+
 public class LinkedListDemo {
     public static Node head;
     public static void main(String[] args) { 
@@ -8,29 +10,38 @@ public class LinkedListDemo {
 
          Node tail = head;
 
+         head = insertAtHead(head, 444444);
+         head = insertAtHead(head, 5555);
+
           insertAtEnd(tail, 23);
          insertAtEnd(tail, 43);
+        //  tail.next = head.next;
+         //printList(head);
+         if(floydCycleDetection(head)){
+            System.out.println("Cycle present");
+         }else{
+            System.out.println("Not present");
+         }
 
-         System.out.println("---------------Printing for tail ------------");
-         printListForTail(tail);
+        //  System.out.println("---------------Printing for tail ------------");
+        //  printListForTail(tail);
 
-         tail=insertAtEnd2(tail, 222);
-        tail= insertAtEnd2(tail, 1111);
-         System.out.println("---------------Printing for tail 2 ------------");
-         printListForTail(tail);
+        //  tail=insertAtEnd2(tail, 222);
+        // tail= insertAtEnd2(tail, 1111);
+        //  System.out.println("---------------Printing for tail 2 ------------");
+        //  printListForTail(tail);
 
-        //  head = insertAtHead(head, 444444);
-        //  head = insertAtHead(head, 5555);
 
-        insertAtHeadMethod2(head,556);
-        insertAtHeadMethod2(head,545454);
-     System.out.println("---------------Printing for head ------------");
-       printList(head);
 
-       int pos = 1;
-       deleteNode(head, pos);
-       System.out.println("---------------After deleting print in main method ----------------");
-       printList(head);
+    //     insertAtHeadMethod2(head,556);
+    //     insertAtHeadMethod2(head,545454);
+    //  System.out.println("---------------Printing for head ------------");
+    //    printList(head);
+
+    //    int pos = 1;
+    //    deleteNode(head, pos);
+    //    System.out.println("---------------After deleting print in main method ----------------");
+    //    printList(head);
 
 
     
@@ -41,6 +52,24 @@ public class LinkedListDemo {
     // System.out.println("--------------Insert at any position-----------------");
     // printList(head);
 
+    }
+
+    static boolean floydCycleDetection(Node head){
+        if(head==null) return false;
+
+        Node slow = head;
+        Node fast = head;
+        while(slow !=null && fast != null){
+            fast = fast.next;
+            if(fast !=null){
+                fast= fast.next;
+            }
+            slow = slow.next;
+            if(fast == slow){
+                return true;
+            }
+        }
+        return false;
     }
 
 
