@@ -20,7 +20,7 @@ public class ReverseALinkedListInKGroups {
             temp = temp.next;
         }
     }
-
+    //Time O(n) SC O(n/k) = O(n)
     static Node reverseUsingRecursion(Node head, int key){
         if(head == null){
             return null;
