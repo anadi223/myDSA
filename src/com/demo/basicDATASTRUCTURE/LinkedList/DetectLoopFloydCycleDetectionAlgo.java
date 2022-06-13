@@ -18,7 +18,7 @@ public class DetectLoopFloydCycleDetectionAlgo {
         Node temp = head;
         while(temp != null){
             //cycle hai guru 
-            if(map.containsKey(temp)){
+            if(map.containsKey(temp)){ //agar map me vo value phle se hai that means it is visited that means cycle present
                 return true;
             }
             map.put(temp,true);
@@ -27,22 +27,39 @@ public class DetectLoopFloydCycleDetectionAlgo {
         return false;
     }
 
-    //!!Detect Loop FLOYD'S CYCLE DETECTION ALGO
-    static boolean floydCycleDetection(Node head){
-        if(head==null) return false;
+    //!!Detect Loop FLOYD'S CYCLE DETECTION ALGO TC -- O(n) SC O(1)
+    //https://leetcode.com/problems/linked-list-cycle/
+    static Node floydCycleDetection(Node head){
+        if(head==null || head.next == null) return null;
 
         Node slow = head;
         Node fast = head;
         while(slow !=null && fast != null){
-            fast = fast.next;
+            fast = fast.next; // fast do baar aage bdh rha
             if(fast !=null){
                 fast= fast.next;
             }
             slow = slow.next;
-            if(fast == slow){
-                return true;
+            if(fast == slow){ // wo condition jahan pe fast slow ko pakad lega
+                return slow; //IS NODE PE HAI WO INTERSECTIONN
             }
         }
-        return false;
+        return null;
     }
+
+    //https://leetcode.com/problems/linked-list-cycle-ii/
+    static Node getStartingNode(Node head){
+        if(head == null) return null;
+        Node pointOfIntersection = floydCycleDetection(head);
+        if(pointOfIntersection == null){ //extra check ki bhaiya agar koi loop na ho toh intersection to null hi aayega na toh bahar aa jao loop se
+            return null;
+        }
+        Node slow = head;
+        while(slow !=pointOfIntersection){
+            slow = slow.next;
+            pointOfIntersection = pointOfIntersection.next;
+        }
+        return slow;
+    }
+
 }
