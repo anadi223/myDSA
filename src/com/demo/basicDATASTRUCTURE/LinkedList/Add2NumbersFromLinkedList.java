@@ -56,7 +56,7 @@ public class Add2NumbersFromLinkedList {
         while(first!=null || second !=null || carry!=0){  // tab tak iterate karo jab tak ek na ek condition hai,, first!=null kya pta ek list 3,4 hai ek 3,4,5 hai toh jab 5 pe aayega tab tak toh list 1 khtm ho chuki hogi na mtlb null point kar rhi hogi.. and one more possible case carry ka if list is 5,5 and 5,5 toh answer kya hai 110 toh ek extra node create hogi carry ki 
 
             int val1 =0;
-            if(first!=null){ // ye logic wo case handle krega jab suppose first iterate krte krte null hogya and we need to add second to first,, toh ek helper val1 ko 0 le lo and agar first null na ho tab hi value ko update karo with the data else val1 toh 0  hai toh if tum sum niakl rhe aur null bhi aaya hm sum me val1 add kar rhe which is zero so code nhi phtega
+            if(first!=null){ // ye logic wo case handle krega jab suppose first iterate krte krte null hogya and we need to add second to first,, toh ek helper val1 ko 0 le lo and agar first null na ho tab hi value ko update karo with the data else val1 toh 0  hai toh if tum sum niakl rhe aur null bhi aaya hm sum me val1 add kar rhe which is zero so code nhi phtega for eg. 34 + 345 jab 5 pe aaoge toh list 1 toh null hai lekin val1 abhi bhi 0 hai us iteration ke liye toh code nhi phatega
                 val1 = first.data;
             }
 
@@ -81,5 +81,14 @@ public class Add2NumbersFromLinkedList {
             }
         }
         return reverse(ansHead);    
+    }
+}
+
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data = data;
+        next=null;
     }
 }
