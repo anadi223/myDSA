@@ -103,6 +103,9 @@ class StackUsingArray{
     }
 }
 
+
+//Linked List follows already LIFO
+
 class StackUsingLinkedList{
     Node top;
     StackUsingLinkedList(){
@@ -110,9 +113,9 @@ class StackUsingLinkedList{
     }
 
     void push(int x){
-        Node temp = new Node(x);
+        Node temp = new Node(x); // naya node bnao 
         // temp ke agle ko top kar do
-        temp.next = top;
+        temp.next = top; // naye node ko top pe rkh do
         //top ko bdha do
         top = temp;
     }
@@ -126,7 +129,7 @@ class StackUsingLinkedList{
             System.out.println("Stack underflow");
             return;
         }
-        top=top.next;
+        top=top.next; // top ko uske agle pointer pe bhej doge toh dost automatically top wala element delete ho gya
     }
 
      int peek(){
