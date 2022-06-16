@@ -21,22 +21,41 @@ public class CloneALinkedListWithRandomPointer {
     }
     static Node clone(Node head){
         Node cloneHead = null;
+        Node cloneTail =null;
+
         Node temp = head;
         while(temp!=null){
             Node newNode = new Node(temp.data);
-            cloneHead.next = newNode;
-            //cloneHead = cloneHead.next;
-            cloneHead =newNode;
-            temp =temp.next;
+            if(cloneHead == null){
+                cloneHead = newNode;
+                cloneTail = newNode;
+            }
+            else{
+                cloneTail.next = newNode;
+                cloneTail = newNode;
+                System.out.println(cloneTail.data + ":::::::::::::::::::::::::");
+            }
+            temp = temp.next;
         }
-        return cloneHead;
+        return cloneTail;
+    }
+
+    static void insertAtTail(Node head, Node tail , int data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            tail = newNode;
+        }
+        else{
+            tail.next = newNode;
+            tail = newNode;
+        }
     }
 }
 
 class Node{
     int data;
     Node next;
-
     Node(int data){
         this.data = data;
         next = null;
