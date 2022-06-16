@@ -17,6 +17,7 @@ public class StackIntro {
         // stack.push(12);
         // System.out.println(stack.size());
 
+        //STACK USING ARRAY
         StackUsingArray arrayImpl = new StackUsingArray(5);
         arrayImpl.push(2);
         arrayImpl.push(3);
@@ -30,6 +31,21 @@ public class StackIntro {
         System.out.println(peek);
         boolean isEmpty = arrayImpl.isEmpty();
         System.out.println(isEmpty);
+
+
+        //STACK USING LINKED LIST
+        System.out.println("------------STARTING LINKED LIST IMPLEMENTATION---------------");
+        StackUsingLinkedList linkedListImpl = new StackUsingLinkedList();
+        linkedListImpl.push(1);
+        linkedListImpl.push(2);
+        linkedListImpl.pop();
+       int ans= linkedListImpl.peek();
+
+    //    boolean ans= linkedListImpl.isEmpty();
+       System.out.println(ans);
+        // linkedListImpl.printList();
+
+
     }
     
 }
@@ -84,5 +100,62 @@ class StackUsingArray{
         for(int x: arr){
             System.out.println(x);
         }
+    }
+}
+
+class StackUsingLinkedList{
+    Node top;
+    StackUsingLinkedList(){
+        this.top = null;
+    }
+
+    void push(int x){
+        Node temp = new Node(x);
+        // temp ke agle ko top kar do
+        temp.next = top;
+        //top ko bdha do
+        top = temp;
+    }
+
+    boolean isEmpty(){
+        return top == null;
+    }
+
+    void pop(){
+        if(top ==null){
+            System.out.println("Stack underflow");
+            return;
+        }
+        top=top.next;
+    }
+
+     int peek(){
+        if(top !=null){
+            return top.data;
+        }
+        else{
+            System.out.println("Stack is empty");
+            return -1;
+        }
+    }
+
+    void printList(){
+        Node temp = top;
+        while(temp !=null){
+            System.out.println(temp.data);
+            temp =temp.next;
+        }
+    }
+
+}
+
+
+
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data = data;
+        next= null;
     }
 }
