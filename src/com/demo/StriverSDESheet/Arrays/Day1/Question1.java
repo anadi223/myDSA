@@ -1,4 +1,4 @@
-package com.demo.StriverSDESheet.Arrays;
+package com.demo.StriverSDESheet.Arrays.Day1;
 
 import java.util.Arrays;
 
