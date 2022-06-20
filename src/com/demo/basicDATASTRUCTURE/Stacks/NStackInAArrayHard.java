@@ -10,7 +10,7 @@ public class NStackInAArrayHard {
 
 }
 
-
+//!TC O(1)  SC O(S+N)
 class NStack{
 
     int[] arr; // main array jahan dalna hai    
