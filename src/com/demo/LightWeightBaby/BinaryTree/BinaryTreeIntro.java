@@ -19,6 +19,9 @@ public class BinaryTreeIntro {
         System.out.println("-------Post Order traversal Print -------");
         postOrderTraversal(root);  
 
+        //Build from level order traversal
+        buildFromLevelOrder(root);
+
     }
         //CREATE A BINARY TREE
     static Node buildTree(Node root){
@@ -125,8 +128,39 @@ public class BinaryTreeIntro {
         postOrderTraversal(root.right);
         System.out.print(root.data + " ");
     } 
-}
 
+
+    //&Build from Level Order Traversal
+
+    static void buildFromLevelOrder(Node root){
+        Queue<Node> q = new LinkedList<>();
+        System.out.println("Enter the data for root");
+        Scanner s1 = new Scanner(System.in);
+        int data = s1.nextInt();
+        root = new Node(data);
+
+        q.add(root);
+
+        while(q.isEmpty() == false){
+            Node temp  = q.poll();
+
+            System.out.println("Enter the data for left of "+ temp.data);
+            int leftData = s1.nextInt();
+            if(leftData != -1){
+            temp.left = new Node(leftData);
+            q.add(temp.left);
+            }
+
+            System.out.println("Enter the data for right of "+ temp.data);
+            int rightData = s1.nextInt();
+            if(rightData != -1){
+            temp.right = new Node(rightData);
+            q.add(temp.right);
+            }
+        }
+
+    }
+}
 
 class Node{
     int data;
