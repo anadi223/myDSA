@@ -1,4 +1,4 @@
-package com.demo.LightWeightBaby.BinaryTree.ZigZag;
+package com.demo.LightWeightBaby.BinaryTree.TreeTraversals;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
