@@ -13,7 +13,7 @@ public class SumOfNodesOnLongestPathFromRootToLeaf {
          maxSum = Integer.MIN_VALUE; // max sum 
         int len =0; // current length of a path
          maxLen =0; // max length/longest path
-
+ 
 
        solve(root,sum,len);
         return maxSum;
@@ -33,6 +33,6 @@ public class SumOfNodesOnLongestPathFromRootToLeaf {
         sum = sum+root.data; // sum add karte rho us current path ke liye
        solve(root.left, sum,  len+1); // left call
         solve(root.right, sum, len+1); // right call
-        
+
     }
 }
