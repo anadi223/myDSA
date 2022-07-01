@@ -6,6 +6,7 @@ public class MaximumSumOfNonAdjacentNodes {
     public static void main(String[] args) {
         
     }
+    //TC O(n) SC o(H)
     static int getMaxSum(Node root){
         Pair ans = solve(root);
         return Math.max(ans.first, ans.second); // do ans aayenge hmare paas ek include krkr current node ko ek na krke donon me se jo max hoga wo ans hai tmhra
