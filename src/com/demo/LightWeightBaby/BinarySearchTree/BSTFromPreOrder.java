@@ -7,7 +7,7 @@ public class BSTFromPreOrder {
     }
 
 
-    
+    //TC O(n) SC O(n)
     Node preOrderTOBST(int[] arr){
         int min = Integer.MIN_VALUE; // min range
         int max = Integer.MAX_VALUE; // max range
@@ -28,7 +28,7 @@ public class BSTFromPreOrder {
         Node root = new Node(arr[i[0]++]); // root bna do
         root.left = solve(arr, min, root.data,i); // validate bst wala code ka logic min and max range ka
         root.right = solve(arr, root.data, max,i); // validate bst wala code ka logic
-        
+
         return root;
     }
 }
