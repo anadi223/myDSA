@@ -1,4 +1,4 @@
-package com.demo.LightLightWeight.DynamicProgramming;
+package com.demo.LightLightWeight.DynamicProgrammingAdityaVerma;
 
 import java.util.Arrays;
 
@@ -30,7 +30,8 @@ public class FibonacciNumberBottomUp {
             int prev2 = 0;
 
             for(int i=2;i<=n;i++){
-                int curr = prev1+prev2; // ek answer nikl gya toh agli call pe 2 aage jayega 3 pe aur 3 ke liye uske peeche wale elements bhi toh ek ek aage jayenge na 
+                int curr = prev1+prev2; // ek answer nikl gya toh agli
+                // call pe 2 aage jayega 3 pe aur 3 ke liye uske peeche wale elements bhi toh ek ek aage jayenge na 
 
                 prev2 = prev1; // prev2 ko update kr diya
                 prev1 = curr; //prev1 ko curr ke barabar kr diya

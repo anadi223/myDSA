@@ -1,4 +1,4 @@
-package com.demo.LightLightWeight.DynamicProgramming;
+package com.demo.LightLightWeight.DynamicProgrammingAdityaVerma;
 
 import java.util.Arrays;
 //https://www.codingninjas.com/codestudio/problems/nth-fibonacci-number_74156?leftPanelTab=1&utm_source=youtube&utm_medium=affiliate&utm_campaign=Lovebabbar
