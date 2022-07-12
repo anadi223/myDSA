@@ -19,11 +19,11 @@ public class HeapifyAlgorithm {
         int largest = i; // isko sahi jagah pe leke jana hai
         int left = 2*i;
         int right = 2*i + 1;
-        if(left < n && arr[largest] < arr[left]){ //left < n bound check kar rhe
+        if(left <= n && arr[largest] < arr[left]){ //left <= n bound check kar rhe //! 1 Based indexing hai
             largest = left; // largest ka pointer change krna rhega
         }
 
-        if(right < n && arr[largest] < arr[right]){
+        if(right <= n && arr[largest] < arr[right]){
             largest = right;
         }
 
