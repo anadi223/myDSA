@@ -17,16 +17,17 @@ public class KClosestNumber {
     static int[] findKClosest(int[] arr,  int x, int k){
         PriorityQueue<Pair> maxHeap = new PriorityQueue<Pair>(Collections.reverseOrder());
         for(int i=0;i<arr.length;i++){
-            maxHeap.add(new Pair((Math.abs(arr[i] -x)),arr[i]));
+            if(x == arr[i]) continue; // question me diya hai ki X ko include nhi krna hai answer me
+            maxHeap.add(new Pair((Math.abs(x - arr[i])),arr[i]));
             if(maxHeap.size()> k){
                 maxHeap.poll();
             }
         }
         //is step tak maxHeap me wo values hongi jo answer me chhaiye see notes
         int[] ans = new int[k]; 
-        int index=0;
+        int index=maxHeap.size()-1;
         while(maxHeap.size()>0){
-            ans[index++] = maxHeap.poll().second;
+            ans[index--] = maxHeap.poll().second;
         }
         return ans;
     }
@@ -42,9 +43,14 @@ class Pair implements Comparable<Pair>{
         this.first = first;
         this.second = second;
     }
-    public int compareTo(Pair p){
-        if(p.first != this.first) return p.first-this.first;
-        return this.second-p.second;
+
+    @Override
+    public int compareTo(Pair p){ //compareTo is a method used to compare two values based on some parameters 
+        if(this.first != p.first){ //for our question agar phli value dusri se equal nhi hai
+            return this.first - p.first; //toh sort based on the difference on the values
+        }else{
+            return p.second - this.second; // agar same hai dono firsts toh ek kaam karo dost second ke basis pe calculate kar lo
+        }
      }
     
 }
