@@ -26,7 +26,7 @@ public class Question4 {
         return max;
     }
 
-    //TC O(n) Good concept
+    //TC O(nlogn) SC O(n) Good concept
     static int largestSubArrayApproach2(int[] arr){
         HashMap<Integer,Integer> map = new HashMap<>();
         int max=0;
