@@ -1,5 +1,6 @@
 package com.demo.StriverSDESheet.LinkedList.Day5;
 
+//https://leetcode.com/problems/remove-nth-node-from-end-of-list/submissions/
 public class Question4 {
     public static void main(String[] args) {
         Node head = new Node(1);
@@ -15,6 +16,8 @@ public class Question4 {
         }
 
     } 
+
+    //TC O(2N)
     static Node removeNthNodeApproach1(Node head, int n){
         if(head == null || head.next == null){
             return null;
@@ -41,6 +44,25 @@ public class Question4 {
         }
         return count;
     }
+    //TC O(N)
+    static Node removeNthNodeApproach2(Node head, int n){
+        Node start = new Node();
+        start.next = head;
+        //Lets find the mid
+        Node slow = start; // initially slow aur fast head se phle hoga mtlb slow ka next head aur fast ka next head ko point kar rha hoga
+        Node fast = start;
+
+        //fast ko n tak bdhao
+        for(int i=1;i<=n;i++){
+            fast = fast.next;
+        }
+        while(fast.next !=null){ // jab fast n tk aa jaaye tab fast aur slow ko ek ek bdhao jab tak fast ka next null ko na point kare
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next; // jab loop se bahar aaoge toh tm us node se phle hoge jisko delete krna rhega toh simple eg..1 2 3  2 ko delete krna toh 1 ka next point karwa do 1 ke next ke next pe
+        return start.next; // start initially null hai is liye start.next return krwa rhe
+    }
 
  
 }
@@ -53,4 +75,5 @@ class Node{
         this.data = data;
         next = null;
     }
+    Node(){}
 }
