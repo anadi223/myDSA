@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 //https://practice.geeksforgeeks.org/problems/detect-cycle-in-an-undirected-graph/1
-public class DetectCycleUsingBFS {
+public class DetectCycleUsingBFSForUndirectedGraph {
     public static void main(String[] args) {
     }
 
